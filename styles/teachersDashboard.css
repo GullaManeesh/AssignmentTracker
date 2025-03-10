@@ -1,0 +1,587 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Pacifico&family=Spicy+Rice&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --box-shadow: 0px 10px 20px rgb(0, 0, 0, 0.5);
+  --box-shadow1: 0px 10px 20px rgb(255, 255, 255);
+  --nanto: "Noto Sans", sans-serif;
+  --oleo: "Oleo Script", system-ui;
+}
+body {
+  background-color: white;
+  color: black;
+  font-family: "Noto Sans", sans-serif;
+  position: relative;
+}
+nav {
+  position: fixed;
+  left: -310px;
+  top: 0;
+  height: 100vh;
+  width: 300px;
+  box-shadow: var(--box-shadow);
+  background-color: white;
+  z-index: 5;
+}
+
+nav header {
+  font-size: 22px;
+  font-weight: 600;
+  font-family: "Oleo Script", system-ui;
+
+  text-align: center;
+  line-height: 70px;
+  width: 100%;
+}
+
+.sidebar-links {
+  margin-top: 0px;
+  list-style-type: none;
+}
+
+.sidebar-links li {
+  margin-bottom: 0px;
+}
+.sidebar-links a {
+  display: block;
+  color: black;
+  text-decoration: none;
+  padding-left: 70px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.sidebar-links a:hover {
+  box-shadow: 0px 15px 20px rgb(0, 0, 0, 0.2);
+}
+
+.sidebar-links i {
+  margin-right: 10px;
+}
+
+#check {
+  display: none;
+}
+
+label #menu,
+label #cancel {
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+}
+
+label #menu {
+  left: 20px;
+  top: 20px;
+  font-size: 35px;
+  transition: all 0.5s;
+  position: fixed;
+  color: black;
+}
+
+label #cancel {
+  z-index: 10;
+  left: -200px;
+  top: 20px;
+  font-size: 30px;
+  background-color: black;
+  color: white;
+  transition: all 0.5s;
+  padding: 0px 4px;
+}
+
+#check:checked ~ nav {
+  left: 0;
+}
+
+#check:checked ~ label #menu {
+  left: 250px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#check:checked ~ label #cancel {
+  left: 250px;
+  position: fixed;
+}
+
+section {
+  height: 100vh;
+  width: 100%;
+  transition: all 0.3s linear;
+}
+
+#home {
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+.trackimage {
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+  transform: translate(-30%, -0.5%);
+  object-fit: cover;
+  width: 80%;
+  height: 90%;
+  display: flex;
+
+  z-index: 3;
+}
+.trackimage img {
+  height: 100%;
+  width: 100%;
+}
+
+.loop {
+  display: flex;
+  position: absolute;
+  height: 20%;
+  top: 40%;
+  font-size: 70px;
+  font-family: var(--nanto);
+  width: 100%;
+  overflow: hidden;
+}
+.loop h1 {
+  width: 100%;
+  font-weight: 500;
+  animation: anim 15s linear infinite;
+  margin-right: 50px;
+  white-space: nowrap;
+}
+.loop > h1 > span {
+  -webkit-text-stroke: 1.2px black;
+  color: transparent;
+}
+
+@keyframes anim {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+#profile {
+  background-color: lightblue;
+  width: 100vw;
+}
+
+#students {
+  background-color: rgb(7, 1, 32);
+}
+#assignments {
+  padding: 10px;
+  background-color: rgb(235, 252, 251);
+  box-shadow: var(--box-shadow);
+  height: max-content;
+  position: relative;
+  border-radius: 20px;
+}
+#assignments h2 {
+  text-align: center;
+  font-family: "Oleo Script", system-ui;
+  font-size: 40px;
+}
+
+.assi {
+  background-color: rgb(255, 255, 255);
+  padding: 50px;
+}
+
+.assignment-form {
+  margin-top: 20px;
+  height: 30%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 20px;
+  align-items: flex-start;
+  padding: 0 20px;
+}
+
+.dep-sec {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 50px;
+  box-shadow: var(--box-shadow);
+  width: 350px;
+  border-radius: 20px;
+  height: 200px;
+  background-color: white;
+}
+select {
+  outline: none;
+}
+
+input {
+  border: none;
+  outline: none;
+  box-shadow: 0px 10px 20px rgb(0, 0, 0, 0.4);
+  padding: 8px;
+  outline: none;
+}
+input:hover {
+  box-shadow: 0px 10px 20px rgb(0, 0, 0, 0.4);
+}
+
+.dep-sec h4 {
+  text-align: center;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 22px;
+  margin-left: 5px;
+  border-radius: 5px;
+  border-bottom: 3px solid black;
+  font-family: "Oleo Script", system-ui;
+}
+
+form ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+form li {
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+.dep-sec label {
+  font-size: 18px;
+}
+
+form select {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 5px;
+  box-shadow: 0px 10px 20px rgb(0, 0, 0, 0.1);
+}
+
+form select:hover {
+  box-shadow: var(--box-shadow);
+}
+
+.c-assignment {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 300px;
+  width: 90%;
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  border-radius: 20px;
+  background-color: white;
+  margin-left: 20px;
+}
+
+.c-assignment h3 {
+  text-align: center;
+  font-size: 30px;
+  border-bottom: 4px solid black;
+  font-family: "Oleo Script", system-ui;
+}
+
+.c-assignment label {
+  font-size: 18px;
+}
+
+.c-assignment button {
+  background: black;
+  color: white;
+  border-radius: 10px;
+  padding: 15px;
+  width: max-content;
+  border: none;
+  position: relative;
+  left: 50%;
+  translate: -50%;
+  bottom: 0;
+  font-size: 15px;
+  transition: all 0.2s;
+  box-shadow: 0px 10px 20px rgb(0, 0, 0);
+}
+
+.c-assignment button:hover {
+  transform: scale3d(1.1, 1.1, 1.1);
+}
+
+.c-assignment input {
+  margin-bottom: 20px;
+  margin-left: 10px;
+  padding: 8px;
+  width: 80%;
+  border: none;
+  box-shadow: 0px 10px 20px rgb(0, 0, 0, 0.2);
+}
+.c-assignment input:hover {
+  box-shadow: var(--box-shadow);
+}
+
+#duedate {
+  width: max-content;
+}
+
+.created-assignments {
+  margin: 20px;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: var(--box-shadow);
+}
+
+.created-assignments h3 {
+  text-align: center;
+  font-family: "Oleo Script", system-ui;
+  font-size: 25px;
+  border-bottom: 3px solid black;
+  margin: 10px 0px;
+}
+.created-assignments table {
+  padding: 5px;
+  background-color: rgb(33, 30, 65);
+  color: rgb(15, 227, 231);
+  width: 100%;
+  border: 2px solid orange;
+  border-collapse: collapse;
+  font-size: 15px;
+  table-layout: fixed;
+}
+
+.created-assignments thead {
+  color: white;
+  font-size: 20px;
+}
+.created-assignments table th,
+.created-assignments table td {
+  width: 25%; /* Adjust this value if you want more balanced columns */
+  padding: 20px;
+  text-align: center;
+  border: 2px solid rgb(141, 215, 234);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  background-color: transparent; /* No background color */
+  border: none; /* Remove border */
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px 10px;
+  color: white; /* Three dots in white */
+}
+
+.dropdown-toggle:hover {
+  background-color: transparent; /* No hover background color */
+}
+
+.dropdownMenu {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.dropdownMenu button {
+  color: black;
+  padding: 12px 16px;
+  border: none;
+  text-align: left;
+  width: 100%;
+  display: block;
+  cursor: pointer;
+}
+
+.dropdownMenu button:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+.give-pop {
+  background: black;
+  color: white;
+  border-radius: 10px;
+  padding: 15px;
+  width: max-content;
+  border: none;
+  position: relative;
+  left: 50%;
+  translate: -50%;
+  bottom: 0;
+  font-size: 15px;
+  transition: all 0.2s;
+  box-shadow: 0px 10px 20px rgb(0, 0, 0);
+}
+.give-pop button:hover {
+  background-color: #f1f1f1; /* Change color on hover */
+  box-shadow: var(--box-shadow); /* Add a hover shadow */
+}
+
+/* Hover effect for dropdown buttons */
+.dropdownMenu button:hover {
+  background-color: #f1f1f1; /* Change color on hover */
+  box-shadow: var(--box-shadow); /* Add a hover shadow */
+}
+
+#submissions {
+  padding: 10px;
+  background-color: rgb(235, 252, 251);
+  box-shadow: var(--box-shadow);
+  height: max-content;
+  position: relative;
+  border-radius: 20px;
+}
+
+#submissions h2 {
+  text-align: center;
+  font-family: "Oleo Script", system-ui;
+  font-size: 40px;
+}
+
+.submi {
+  background-color: rgb(255, 255, 255);
+  padding: 50px;
+}
+
+.selection-form {
+  width: 300px;
+  margin: 20px auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.selection-form h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+  font-family: var(--oleo);
+}
+
+.selection-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.selection-form label {
+  margin-bottom: 5px;
+  color: #555;
+}
+input,
+select {
+  border: none;
+  outline: none;
+  box-shadow: 0px 15px 20px rgb(0, 0, 0, 0.2);
+}
+input::placeholder {
+  font-family: var(--nanto);
+}
+input:hover,
+select:hover {
+  box-shadow: 0px 15px 20px rgb(0, 0, 0, 0.5);
+}
+.selection-form select,
+.selection-form input {
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.selection-form button {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  box-shadow: var(--black-light);
+  transition: all 0.5s;
+  font-family: var(--nanto);
+  padding: 10px 0px;
+}
+button:hover {
+  box-shadow: var(--black-dark);
+  transform: scale3d(1.1, 1.1, 1.1);
+}
+
+.submission-table table {
+  padding: 5px;
+  background-color: rgb(33, 30, 65);
+  color: rgb(15, 227, 231);
+  width: 100%;
+  border: 2px solid orange;
+  border-collapse: collapse;
+  font-size: 15px;
+  table-layout: fixed;
+}
+.submission-table thead {
+  color: white;
+  font-size: 20px;
+}
+.submission-table table th,
+.submission-table table td {
+  width: 25%; /* Adjust this value if you want more balanced columns */
+  padding: 20px;
+  text-align: center;
+  border: 2px solid rgb(141, 215, 234);
+}
+
+.feed-form {
+  background-color: rgb(255, 255, 255);
+  padding: 50px;
+}
+#feedback {
+  padding: 10px;
+  background-color: rgb(235, 252, 251);
+  box-shadow: var(--box-shadow);
+  height: max-content;
+  position: relative;
+  border-radius: 20px;
+}
+
+#feedback h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+#feedback span {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#feedback input[type="text"],
+#feedback textarea {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+}
+
+#feedback textarea {
+  height: 100px;
+}
+#feedback h2 {
+  font-family: "Oleo Script", system-ui;
+  color: black;
+  font-size: 30px;
+}

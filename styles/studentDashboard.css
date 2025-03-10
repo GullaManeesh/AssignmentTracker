@@ -1,0 +1,326 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Pacifico&family=Spicy+Rice&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --black-dark: 0px 10px 20px rgb(0, 0, 0, 0.5);
+  --black-light: 0px 10px 20px rgb(0, 0, 0, 0.2);
+  --white-shadow1: 0px 10px 20px rgb(255, 255, 255);
+  --nanto: "Noto Sans", sans-serif;
+  --oleo: "Oleo Script", system-ui;
+}
+body {
+  background-color: white;
+  color: black;
+  font-family: "Noto Sans", sans-serif;
+  position: relative;
+  width: 100vw;
+}
+nav {
+  position: fixed;
+  left: -310px;
+  top: 0;
+  height: 100vh;
+  width: 300px;
+  box-shadow: var(--box-shadow);
+  background-color: white;
+  z-index: 5;
+}
+
+nav header {
+  font-size: 22px;
+  font-weight: 600;
+  font-family: "Oleo Script", system-ui;
+
+  text-align: center;
+  line-height: 70px;
+  width: 100%;
+}
+
+.sidebar-links {
+  margin-top: 0px;
+  list-style-type: none;
+}
+
+.sidebar-links li {
+  margin-bottom: 0px;
+}
+.sidebar-links a {
+  display: block;
+  color: black;
+  text-decoration: none;
+  padding-left: 70px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.sidebar-links a:hover {
+  box-shadow: 0px 15px 20px rgb(0, 0, 0, 0.2);
+}
+
+.sidebar-links i {
+  margin-right: 10px;
+}
+
+#check {
+  display: none;
+}
+
+label #menu,
+label #cancel {
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+}
+
+label #menu {
+  left: 20px;
+  top: 20px;
+  font-size: 35px;
+  transition: all 0.5s;
+  position: fixed;
+  color: black;
+}
+
+label #cancel {
+  z-index: 10;
+  left: -200px;
+  top: 20px;
+  font-size: 30px;
+  background-color: black;
+  color: white;
+  transition: all 0.5s;
+  padding: 0px 4px;
+}
+
+#check:checked ~ nav {
+  left: 0;
+}
+
+#check:checked ~ label #menu {
+  left: 250px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#check:checked ~ label #cancel {
+  left: 250px;
+  position: fixed;
+}
+
+section {
+  height: 100vh;
+  width: 100%;
+  transition: all 0.3s linear;
+}
+
+#home {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.trackimage {
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+  transform: translate(-30%, -0.5%);
+  object-fit: cover;
+  width: 80%;
+  height: 90%;
+  display: flex;
+
+  z-index: 3;
+}
+.trackimage img {
+  height: 100%;
+  width: 100%;
+}
+
+.loop {
+  display: flex;
+  position: absolute;
+  height: 20%;
+  top: 30%;
+  font-family: var(--nanto);
+  width: 100%;
+  overflow: hidden;
+}
+.loop h1 {
+  width: 100%;
+  font-weight: 500;
+  font-size: 100px;
+  animation: anim 15s linear infinite;
+  margin-right: 50px;
+  white-space: nowrap;
+  color: rgb(0, 0, 0);
+}
+.loop > h1 > span {
+  -webkit-text-stroke: 1.2px rgb(0, 0, 0);
+  color: transparent;
+}
+
+@keyframes anim {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+#profile {
+  background-color: lightblue;
+}
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 2rem;
+  color: #333;
+}
+#assignments {
+  background-color: beige;
+  padding: 20px;
+}
+/* Form styles */
+.selection-form {
+  width: 300px;
+  margin: 20px auto;
+  margin-bottom: 50px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.selection-form h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+  font-family: var(--oleo);
+}
+
+.selection-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.selection-form label {
+  margin-bottom: 5px;
+  color: #555;
+}
+input,
+select {
+  border: none;
+  outline: none;
+  box-shadow: 0px 15px 20px rgb(0, 0, 0, 0.2);
+}
+input::placeholder {
+  font-family: var(--nanto);
+}
+input:hover,
+select:hover {
+  box-shadow: 0px 15px 20px rgb(0, 0, 0, 0.5);
+}
+.selection-form select,
+.selection-form input {
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+button {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  box-shadow: var(--black-light);
+  transition: all 0.5s;
+  font-family: var(--nanto);
+}
+button:hover {
+  box-shadow: var(--black-dark);
+  transform: scale3d(1.1, 1.1, 1.1);
+}
+
+table {
+  padding: 5px;
+  background-color: rgb(33, 30, 65);
+  color: rgb(15, 227, 231);
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  table-layout: fixed;
+  border: 3px solid rgb(15, 227, 231);
+}
+
+thead {
+  color: white;
+  font-size: 20px;
+}
+
+table th,
+table td {
+  width: 25%; /* Adjust this value if you want more balanced columns */
+  padding: 20px;
+  text-align: center;
+  border: 3px solid rgb(141, 215, 234);
+}
+
+.selection-form button {
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Assignments Table */
+.assignment-list {
+  width: 80%;
+  height: max-content;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: white;
+
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.assignment-list h3 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+
+  font-family: var(--oleo);
+}
+
+.assignment-list input[type="file"] {
+  display: inline-block;
+  margin: 0;
+}
+
+.assignment-list button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.assignment-list button:hover {
+  background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .assignment-list,
+  .selection-form {
+    width: 90%;
+  }
+
+  .assignment-list table {
+    font-size: 0.9rem;
+  }
+}

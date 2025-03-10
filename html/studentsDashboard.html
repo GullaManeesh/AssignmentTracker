@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard</title>
+    <script
+      src="https://kit.fontawesome.com/5f06fd70a9.js"
+      crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styles/studentDashboard.css" />
+  </head>
+  <body>
+    <input type="checkbox" id="check" />
+    <label for="check">
+      <i class="fa-solid fa-bars" id="menu"></i>
+      <i class="fa-solid fa-xmark" id="cancel"></i>
+    </label>
+    <nav>
+      <header>Assignment Tracker</header>
+      <ul class="sidebar-links">
+        <li>
+          <a href="#assignments"
+            ><i class="fa-solid fa-check"></i>Assignments</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <section id="assignments">
+      <div class="selection-form">
+        <h3>Select Section and Course:</h3>
+        <form id="sectionCourseForm">
+          <label for="sections">Section:</label>
+          <select name="" id="selections">
+            <option value="CSE1">CSE1</option>
+            <option value="CSE2">CSE2</option>
+            <option value="CSE3">CSE3</option>
+            <option value="IT1">IT1</option>
+            <option value="IT2">IT2</option>
+            <option value="IT3">IT3</option>
+            <option value="AIDS1">AIDS1</option>
+            <option value="AIDS2">AIDS2</option>
+            <option value="AIDS3">AIDS3</option>
+            <option value="MECH1">MECH1</option>
+            <option value="MECH2">MECH2</option>
+            <option value="MECH3">MECH3</option>
+          </select>
+          <label for="courseInput">Course:</label>
+          <input type="text" id="courseInput" placeholder="Enter Course Name" />
+
+          <label for="Rollno">Rollno:</label>
+          <input type="text" id="Rollno" placeholder="Enter Rollno" />
+
+          <button type="submit">Show Assignments</button>
+        </form>
+      </div>
+
+      <!-- Assignments Table -->
+      <div class="assignment-list">
+        <h3>Assignments for Selected Section and Course</h3>
+        <table id="assignmentTable">
+          <thead>
+            <tr>
+              <th>Rollno</th>
+              <th>Section</th>
+              <th>Course</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Due Date</th>
+              <th>Submit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Assignment rows will be populated here -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Hidden file input for assignment submission -->
+    <input
+      type="file"
+      id="fileInput"
+      style="display: none"
+      accept=".pdf,.doc,.docx" />
+
+    <script src="../javascript/studentsDashboard.js"></script>
+  </body>
+</html>

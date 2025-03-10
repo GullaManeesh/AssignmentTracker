@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment Tracker - Sign Up & Login</title>
+    <script
+      src="https://kit.fontawesome.com/5f06fd70a9.js"
+      crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styles/studentlogin.css" />
+  </head>
+  <body>
+    <div class="head1"><h1>STUDENT LOGIN PAGE</h1></div>
+    <div class="container">
+      <h1 id="title">Sign Up</h1>
+      <form action="">
+        <div class="input-group">
+          <!-- First input field -->
+          <div class="input-field" id="name">
+            <i class="fa-solid fa-user"></i>
+            <input type="text" placeholder="Username" />
+          </div>
+
+          <!-- Second input field -->
+          <div class="input-field">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" placeholder="Email" />
+          </div>
+
+          <!-- Third input field -->
+          <div class="input-field">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" placeholder="Password" />
+          </div>
+          <p class="forgot">Forgot password <a href="#">Click Here!</a></p>
+        </div>
+        <div class="buttons">
+          <button type="button" id="signup">Sign up</button>
+          <button type="button" class="disable" id="login">Login</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="../javascript/studentlogin.js"></script>
+  </body>
+</html>

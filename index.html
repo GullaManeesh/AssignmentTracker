@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <title>AssignmentTracker</title>
+  </head>
+  <body>
+    <div class="head1"><h1>ASSIGNMENT TRACKER</h1></div>
+    <div class="container">
+      <h1>Click on Teacher or Student</h1>
+      <div class="student">
+        <button id="studentButton">Student</button>
+      </div>
+      <div class="teacher">
+        <button id="teacherButton">Teacher</button>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("studentButton").onclick = () => {
+        window.location.href = "./html/studentlogin.html";
+      };
+
+      document.getElementById("teacherButton").onclick = () => {
+        window.location.href = "./html/teacherlogin.html";
+      };
+    </script>
+  </body>
+</html>

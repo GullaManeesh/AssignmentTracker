@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teacher Dashboard</title>
+    <script
+      src="https://kit.fontawesome.com/5f06fd70a9.js"
+      crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styles/teachersDashboard.css" />
+  </head>
+  <body>
+    <input type="checkbox" id="check" />
+    <label for="check">
+      <i class="fa-solid fa-bars" id="menu"></i>
+      <i class="fa-solid fa-xmark" id="cancel"></i>
+    </label>
+    <nav>
+      <header>Assignment Tracker</header>
+      <ul class="sidebar-links">
+        <li>
+          <a href="#assignments"><i class="fa-solid fa-plus"></i>Assignments</a>
+        </li>
+        <li>
+          <a href="#submissions"
+            ><i class="fa-solid fa-check"></i>Submissions</a
+          >
+        </li>
+        <li>
+          <a href="#feedback"><i class="fa-regular fa-comment"></i>Feedback</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="assi">
+      <section id="assignments">
+        <h2>Create and View Assignments</h2>
+        <form class="assignment-form">
+          <!-- departments -->
+          <div class="dep-sec">
+            <div class="head4"><h4>Select Section and Course:</h4></div>
+            <ul>
+              <li>
+                <label for="sections">Section:</label>
+                <select id="sectionSelections">
+                  <option value="CSE1">CSE1</option>
+                  <option value="CSE2">CSE2</option>
+                  <option value="CSE3">CSE3</option>
+                  <option value="IT1">IT1</option>
+                  <option value="IT2">IT2</option>
+                  <option value="IT3">IT3</option>
+                  <option value="AIDS1">AIDS1</option>
+                  <option value="AIDS2">AIDS2</option>
+                  <option value="AIDS3">AIDS3</option>
+                  <option value="MECH1">MECH1</option>
+                  <option value="MECH2">MECH2</option>
+                  <option value="MECH3">MECH3</option>
+                </select>
+              </li>
+              <li>
+                <label for="sub">Course:</label>
+                <input type="text" id="sub" />
+              </li>
+            </ul>
+          </div>
+
+          <div class="c-assignment">
+            <h3>Create Assignment</h3>
+            <ul>
+              <li>
+                <label for="title"
+                  >Title:
+                  <input type="text" id="title" required />
+                </label>
+              </li>
+              <li>
+                <label for="description"
+                  >Description:
+                  <input type="text" id="description" required />
+                </label>
+              </li>
+              <li>
+                <label for="duedate"
+                  >Due Date:
+                  <input type="date" id="duedate" required />
+                </label>
+              </li>
+            </ul>
+            <button type="submit">Create Assignment</button>
+          </div>
+        </form>
+
+        <div class="created-assignments">
+          <h3>Created Assignments</h3>
+          <div class="create-table">
+            <table id="createdTable">
+              <thead>
+                <tr>
+                  <th>Section</th>
+                  <th>Course</th>
+                  <th>Title</th>
+                  <th>Description</th>
+                  <th>Due Date</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Rows will be populated here by JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="submi">
+      <section id="submissions">
+        <h2>Submissions Section</h2>
+        <div class="selection-form">
+          <h3>Select Section and Course:</h3>
+          <form id="sectionCourseForm">
+            <label for="sections">Section:</label>
+            <select id="submissionSelections">
+              <option value="CSE1">CSE1</option>
+              <option value="CSE2">CSE2</option>
+              <option value="CSE3">CSE3</option>
+              <option value="IT1">IT1</option>
+              <option value="IT2">IT2</option>
+              <option value="IT3">IT3</option>
+              <option value="AIDS1">AIDS1</option>
+              <option value="AIDS2">AIDS2</option>
+              <option value="AIDS3">AIDS3</option>
+              <option value="MECH1">MECH1</option>
+              <option value="MECH2">MECH2</option>
+              <option value="MECH3">MECH3</option>
+            </select>
+            <label for="courseInput">Course:</label>
+            <input
+              type="text"
+              id="courseInput"
+              placeholder="Enter Course Name" />
+
+            <label for="titleInput">Title:</label>
+            <input type="text" id="titleInput" placeholder="Enter Title" />
+
+            <button type="submit" id="filter-button">Show Assignments</button>
+          </form>
+        </div>
+        <div class="submission-table">
+          <table id="submissionTable">
+            <thead>
+              <tr>
+                <th>Roll No</th>
+                <th>Section</th>
+                <th>Course</th>
+                <th>Title</th>
+                <th>Submitted File</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Rows will be populated here by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="feed-form">
+        <section id="feedback">
+          <h2>Instant Feedback</h2>
+          <div>
+            <div>
+              <span>Student Name:</span>
+              <input
+                class="clearinfo"
+                type="text"
+                id="student-name"
+                name="student-name"
+                placeholder="Enter student name" />
+            </div>
+
+            <div>
+              <span>Feedback:</span>
+              <textarea
+                class="clearinfo"
+                id="feedback"
+                name="feedback"
+                placeholder="Enter your feedback"></textarea>
+            </div>
+
+            <div>
+              <button class="give-pop" onclick="submitFeedback()">
+                Submit Feedback
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="../javascript/teachersDashboard.js"></script>
+  </body>
+</html>
